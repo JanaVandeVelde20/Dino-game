@@ -1,0 +1,366 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background-image: url('assets/wintertileset/png/BG/BG.png');
+}
+
+#start{
+    position: relative;
+    width: 80vw; 
+    height: 45vh;
+    background-color: #88b4fcc6;
+    border-radius: 30px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.startMessage {
+    color:white;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    z-index: 10; /* Ensure it appears above all other content */
+}
+
+#game{
+    position: relative;
+    width: 80vw; 
+    height: 45vh;
+    background-color: #88b4fcc6;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+#gameOver{
+    position: relative;
+    width: 80vw; 
+    height: 45vh;
+    background-color: #88b4fcc6;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.score {
+    color: white;
+    position: absolute;
+    top: 10%;
+    left: 93%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    z-index: 12;
+}
+
+.gameOverMessage {
+    color:white;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    z-index: 10;
+}
+
+.reload {
+    position: absolute;
+    top: 20%;
+    left: 70%;
+    color: white;
+    text-align: center;
+    transform: scale(3.5);
+}
+
+.start {
+    position: absolute;
+    top: 25%;
+    left: 62%;
+    color: white;
+    text-align: center;
+    transform: scale(3.5);
+}
+
+.info {
+    position: absolute;
+    top: 9%;
+    left: 94%;
+    color: white;
+    text-align: center;
+    transform: scale(3.5);
+}
+
+.button-reset {
+    background: none;        
+    border: none;            
+    padding: 0;              
+    margin: 0;                       
+    color: inherit;         
+    cursor: pointer;        
+    outline: none;          
+    text-align: inherit;     
+}
+
+#idleDino{
+    transform: scale(1.4);
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    width: 140px;
+    height: 100px;
+    background-image: url('/assets/Dino/Dead\ \(1\).png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 12;
+}
+
+#dino {
+    transform: scale(1.4);
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+    background-image: url('/assets/Dino/Idle\ \(1\).png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#deadDino {
+    transform: scale(1.4);
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+    width: 140px;
+    height: 100px;
+    background-image: url('/assets/Dino/Dead\ \(1\).png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 11;
+}
+
+.tree {
+    position: absolute;
+    bottom: 0px;
+    width: 100px;
+    height: 113px;
+    background-image: url('assets/wintertileset/png/Object/Tree_2.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1;
+    animation: moveTree 8s linear infinite;
+}
+
+.forest {
+    transform: scale(0.95);
+    position: absolute;
+    bottom: 0px;
+    width: 150px;
+    height: 105px;
+    background-image: url('assets/wintertileset/png/Object/Tree_1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 2;
+    animation: moveForest 8s linear infinite;
+}
+
+.snowman {
+    position: absolute;
+    bottom: 0px;
+    width: 150px;
+    height: 108px;
+    background-image: url('assets/wintertileset/png/Object/SnowMan.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 3;
+    animation: moveSnowman 8s linear infinite;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.idle{
+    animation: idle 1s steps(1, end) infinite;
+}
+.run {
+    animation: run 1s steps(1, end) infinite;
+}
+.jump {
+    animation: jump 0.8s;
+}
+
+.die{
+    animation: die 3s forwards;
+}
+
+@keyframes idle {
+    0% {
+        background-image: url('/assets/Dino/Idle\ \(1\).png');
+    }
+    11.1% {
+        background-image: url('/assets/Dino/Idle\ \(2\).png');
+    }
+    22.2% {
+        background-image: url('/assets/Dino/Idle\ \(3\).png');
+    }
+    33.3% {
+        background-image: url('/assets/Dino/Idle\ \(4\).png');
+    }
+    44.4% {
+        background-image: url('/assets/Dino/Idle\ \(5\).png');
+    }
+    55.5% {
+        background-image: url('/assets/Dino/Idle\ \(6\).png');
+    }
+    66.6% {
+        background-image: url('/assets/Dino/Idle\ \(7\).png');
+    }
+    77.7% {
+        background-image: url('/assets/Dino/Idle\ \(8\).png');
+    }
+    100% {
+        background-image: url('/assets/Dino/Idle\ \(9\).png');
+    }
+}
+@keyframes run {
+    0% {
+        background-image: url('/assets/Dino/Run\ \(1\).png');
+    }
+    11.1% {
+        background-image: url('/assets/Dino/Run\ \(2\).png');
+    }
+    22.2% {
+        background-image: url('/assets/Dino/Run\ \(3\).png');
+    }
+    33.3% {
+        background-image: url('/assets/Dino/Run\ \(4\).png');
+    }
+    44.4% {
+        background-image: url('/assets/Dino/Run\ \(5\).png');
+    }
+    55.5% {
+        background-image: url('/assets/Dino/Run\ \(6\).png');
+    }
+    66.6% {
+        background-image: url('/assets/Dino/Run\ \(7\).png');
+    }
+    77.7% {
+        background-image: url('/assets/Dino/Run\ \(8\).png');
+    }
+    100% {
+        background-image: url('/assets/Dino/Run\ \(1\).png');
+    }
+}
+@keyframes jump {
+    0% {
+        top: 143px;
+        background-image: url('assets/Dino/Jump\ \(1\).png');
+    }
+    7.69% {
+        top: 100px;
+        background-image: url('assets/Dino/Jump\ \(2\).png');
+    }
+    15.38% {
+        top: 70px;
+        background-image: url('assets/Dino/Jump\ \(3\).png');
+    }
+    30.7% {
+        top: 70px; /* Dino goes even higher */
+        background-image: url('assets/Dino/Jump\ \(4\).png');
+    }
+    38.5% {
+        top: 70px; /* Peak of the jump */
+        background-image: url('assets/Dino/Jump\ \(5\).png');
+    }
+    46.14% {
+        top: 70px;
+        background-image: url('assets/Dino/Jump\ \(6\).png');
+    }
+    53.83% {
+        top: 70px;
+        background-image: url('assets/Dino/Jump\ \(7\).png');
+    }
+    61.52% {
+        top: 70px;
+        background-image: url('assets/Dino/Jump\ \(8\).png');
+    }
+    69.21% {
+        top: 70px;
+        background-image: url('assets/Dino/Jump\ \(9\).png');
+    }
+    76.90% {
+        top: 70px;
+        background-image: url('assets/Dino/Jump\ \(10\).png');
+    }
+    84.59% {
+        top: 70px;
+        background-image: url('assets/Dino/Jump\ \(11\).png');
+    }
+    92.28% {
+        top: 143px;
+        background-image: url('assets/Dino/Jump\ \(12\).png');
+    }
+    100% {
+        top: 143px;
+        background-image: url('assets/Dino/Jump\ \(1\).png');
+    }
+}
+@keyframes die{
+    0% {
+        background-image: url('/assets/Dino/Dead\ \(1\).png');
+    }
+    11.1% {
+        background-image: url('/assets/Dino/Dead\ \(2\).png');
+    }
+    22.2% {
+        background-image: url('/assets/Dino/Dead\ \(3\).png');
+    }
+    33.3% {
+        background-image: url('/assets/Dino/Dead\ \(4\).png');
+    }
+    44.4% {
+        background-image: url('/assets/Dino/Dead\ \(5\).png');
+    }
+    55.5% {
+        background-image: url('/assets/Dino/Dead\ \(6\).png');
+    }
+    66.6% {
+        background-image: url('/assets/Dino/Dead\ \(7\).png');
+    }
+    100%{
+        background-image: url('/assets/Dino/Dead\ \(8\).png');
+    }
+}
+
+@keyframes moveTree {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: -5000px; /* Move out of screen */
+    }
+}
+
+@keyframes moveForest{
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: -5000px; /* Move out of screen */
+    }
+}
+
+@keyframes moveSnowman{
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: -5000px; /* Move out of screen */
+    }
+}
